@@ -3,13 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'core/app_export.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((value) {
-    Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
-    runApp(MyApp());
-  });
+
+  try {
+    print("Initializing Firebase...");
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    print("Firebase Initialized");
+  } catch (e) {
+    print("Error initializing Firebase: $e");
+  }
+
+  try {
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  } catch (e) {
+    print("Error setting preferred orientations: $e");
+  }
+
+  Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
