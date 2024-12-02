@@ -1,3 +1,5 @@
+// ignore_for_file: duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import '../../core/app_export.dart';
@@ -11,8 +13,9 @@ import 'models/next_trip_model.dart';
 import 'models/tips_model.dart';
 import 'models/userprofile_item_model.dart';
 import 'widgets/listicheart_one_item_widget.dart';
-import 'widgets/userprofile_item_widget.dart';
+import 'widgets/userprofile_item_widget.dart'; // ignore_for_file: must_be_immutable
 
+// ignore_for_file: must_be_immutable
 class HomeScreenPage extends StatelessWidget {
   HomeScreenPage({Key? key})
       : super(
@@ -25,6 +28,7 @@ class HomeScreenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: _buildAppbar(),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.h),
@@ -68,6 +72,7 @@ class HomeScreenPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 16.v),
+
               Expanded(
                 child: AnimationLimiter(
                   child: ListView(
@@ -111,6 +116,37 @@ class HomeScreenPage extends StatelessWidget {
                   ),
                 ),
               ),
+              // Expanded(
+              //     child: ListView(
+              //   padding: EdgeInsets.only(bottom: 24.h),
+              //   children: [
+              //     _buildRow06activepoll(),
+              //     SizedBox(height: 16.v),
+              //     _buildTitleandview(
+              //       popular: "lbl_latest_polls".tr,
+              //       viewallOne: "lbl_view_all".tr,
+              //       onTapViewallOne: () {
+              //         onTapTxtViewallOne();
+              //       },
+              //     ),
+              //     SizedBox(height: 16.v),
+              //     _buildColumnspacer(),
+              //     SizedBox(height: 16.v),
+              //     _buildColumnspacer1(),
+              //     SizedBox(height: 16.v),
+              //     _buildPopular(),
+              //     SizedBox(height: 16.v),
+              //     _buildTitleandview(
+              //       popular: "lbl_trending_polls".tr,
+              //       viewallOne: "lbl_view_all".tr,
+              //       onTapViewallOne: () {
+              //         onTapTxtViewallOne1();
+              //       },
+              //     ),
+              //     SizedBox(height: 16.v),
+              //     _buildColumnspacer2()
+              //   ],
+              // ))
             ],
           ),
         ),
@@ -118,6 +154,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildRow06activepoll() {
     return Container(
       padding: EdgeInsets.symmetric(
@@ -166,12 +203,22 @@ class HomeScreenPage extends StatelessWidget {
                     width: 24.44.h,
                   ),
                 ),
-              ))
+              )
+              // child: CustomIconButton(
+              //   height: 40.adaptSize,
+              //   width: 40.adaptSize,
+              //   padding: EdgeInsets.all(7.h),
+              //   child: CustomImageView(
+              //     imagePath: ImageConstant.imgIcArrowRight,
+              //   ),
+              // ),
+              )
         ],
       ),
     );
   }
 
+  /// Section Widget
   Widget _buildFollowing() {
     return CustomOutlinedButton(
       width: 116.h,
@@ -185,6 +232,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildColumnwhichcity() {
     final List<NextTripModel> list = DataFile.nextTripList;
     return Column(
@@ -226,10 +274,12 @@ class HomeScreenPage extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.only(left: 12.0.h),
                             child: Row(
+                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
                                   width: 26.h,
+                                  // margin: EdgeInsets.only(bottom: 1.v),
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 6.h,
                                     vertical: 2.v,
@@ -248,6 +298,7 @@ class HomeScreenPage extends StatelessWidget {
                                 Padding(
                                   padding: EdgeInsets.only(
                                     left: 8.h,
+                                    // bottom: 1.v,
                                   ),
                                   child: Text(
                                     list[index].title.tr,
@@ -344,6 +395,17 @@ class HomeScreenPage extends StatelessWidget {
                 height: 24.adaptSize,
                 width: 24.adaptSize,
               ),
+              // child: Obx(
+              //       () =>
+              //       CustomCheckboxButton(
+              //         text: "lbl_4_8k".tr,
+              //         value: controller.k.value,
+              //         padding: EdgeInsets.symmetric(vertical: 3.v),
+              //         onChange: (value) {
+              //           controller.k.value = value;
+              //         },
+              //       ),
+              // ),
             ),
             SizedBox(
               width: 4.h,
@@ -363,6 +425,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildColumnspacer() {
     return Container(
       padding: EdgeInsets.all(15.h),
@@ -391,6 +454,7 @@ class HomeScreenPage extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(
                       left: 12.h,
+                      // top: 2.v,
                     ),
                     child: _buildColumnronaldric(
                       ronaldrichards: "lbl_ronald_richards".tr,
@@ -411,6 +475,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildFollowing1() {
     return CustomOutlinedButton(
       width: 116.h,
@@ -423,6 +488,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildSubmit() {
     return CustomElevatedButton(
       height: 41.h,
@@ -435,6 +501,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildColumnspacer1() {
     return Container(
       padding: EdgeInsets.all(16.h),
@@ -463,6 +530,7 @@ class HomeScreenPage extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(
                       left: 12.h,
+                      // top: 4.v,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -523,11 +591,16 @@ class HomeScreenPage extends StatelessWidget {
                 imagePath: ImageConstant.imgIcLike,
                 height: 24.adaptSize,
                 width: 24.adaptSize,
-                margin: EdgeInsets.only(),
+                margin: EdgeInsets.only(
+                    // top: 9.v,
+                    // bottom: 8.v,
+                    ),
               ),
               Padding(
                 padding: EdgeInsets.only(
                   left: 4.h,
+                  // top: 13.v,
+                  // bottom: 11.v,
                 ),
                 child: Text(
                   "lbl_2_4k".tr,
@@ -540,11 +613,15 @@ class HomeScreenPage extends StatelessWidget {
                 width: 24.adaptSize,
                 margin: EdgeInsets.only(
                   left: 16.h,
+                  // top: 9.v,
+                  // bottom: 8.v,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(
                   left: 4.h,
+                  // top: 13.v,
+                  // bottom: 11.v,
                 ),
                 child: Text(
                   "lbl_1_8k".tr,
@@ -554,16 +631,32 @@ class HomeScreenPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(
                   left: 16.h,
+                  // top: 9.v,
+                  // bottom: 8.v,
                 ),
                 child: CustomImageView(
                   imagePath: ImageConstant.share,
                   height: 24.adaptSize,
                   width: 24.adaptSize,
                 ),
+
+                // Obx(
+                //       () =>
+                //       CustomCheckboxButton(
+                //         text: "lbl_4_8k".tr,
+                //         value: controller.kone.value,
+                //         padding: EdgeInsets.symmetric(vertical: 3.v),
+                //         onChange: (value) {
+                //           controller.kone.value = value;
+                //         },
+                //       ),
+                // ),
               ),
               Padding(
                 padding: EdgeInsets.only(
                   left: 4.h,
+                  // top: 13.v,
+                  // bottom: 11.v,
                 ),
                 child: Text(
                   "4.8k".tr,
@@ -577,6 +670,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildPopular() {
     return Column(
       children: [
@@ -593,6 +687,7 @@ class HomeScreenPage extends StatelessWidget {
           child: GridView.builder(
             primary: true,
             shrinkWrap: true,
+            // padding: EdgeInsets.symmetric(horizontal: 20.h),
             physics: NeverScrollableScrollPhysics(),
             itemCount: controller.homeScreenModelObj.value.userprofileItemList
                         .value.length >
@@ -611,6 +706,9 @@ class HomeScreenPage extends StatelessWidget {
                   .homeScreenModelObj.value.userprofileItemList.value[index];
               return GestureDetector(
                 onTap: () {
+                  // Get.to(() => RonaldRichardsScreen(index));
+                  // print("fmejfjfj--e423--${index}   }");
+
                   Get.toNamed(AppRoutes.ronaldRichardsScreen, arguments: index);
                 },
                 child: UserprofileItemWidget(model),
@@ -618,10 +716,45 @@ class HomeScreenPage extends StatelessWidget {
             },
           ),
         ),
+        // SizedBox(
+        //   height: 100.v,
+        //   child: Obx(
+        //     () => GridView.builder(
+        //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        //         crossAxisCount: 1,
+        //         crossAxisSpacing: 10.h,
+        //         mainAxisSpacing: 10.v,
+        //         mainAxisExtent: 100.v,
+        //       ),
+        //       padding: EdgeInsets.zero,
+        //       scrollDirection: Axis.horizontal,
+        //       // separatorBuilder: (context, index) {
+        //       //   return SizedBox(
+        //       //     width: 20.h,
+        //       //   );
+        //       // },
+        //       itemCount: controller
+        //           .homeScreenModelObj.value.userprofileItemList.value.length,
+        //       itemBuilder: (context, index) {
+        //         UserprofileItemModel model = controller
+        //             .homeScreenModelObj.value.userprofileItemList.value[index];
+        //         return GestureDetector(
+        //           onTap: () {
+        //             Get.toNamed(AppRoutes.ronaldRichardsScreen);
+        //           },
+        //           child: UserprofileItemWidget(
+        //             model,
+        //           ),
+        //         );
+        //       },
+        //     ),
+        //   ),
+        // )
       ],
     );
   }
 
+  /// Section Widget
   Widget _buildFollowing2() {
     return CustomOutlinedButton(
       width: 116.h,
@@ -634,6 +767,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildSubmit1() {
     return CustomElevatedButton(
       height: 41.v,
@@ -646,6 +780,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Section Widget
   Widget _buildColumnspacer2() {
     final List<TipsList> list = DataFile.tipsList;
 
@@ -675,6 +810,7 @@ class HomeScreenPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(
                     left: 12.h,
+                    // top: 2.v,
                   ),
                   child: _buildColumnronaldric(
                     ronaldrichards: "lbl_ronald_richards".tr,
@@ -722,6 +858,25 @@ class HomeScreenPage extends StatelessWidget {
                     height: 16.h,
                   ),
               itemCount: list.length),
+          // _buildRowbOne(
+          //   bOne: "lbl_a".tr,
+          //   parisFive: "lbl_australia".tr,
+          // ),
+          // SizedBox(height: 16.v),
+          // _buildRowbOne(
+          //   bOne: "lbl_b".tr,
+          //   parisFive: "lbl_bangkok".tr,
+          // ),
+          // SizedBox(height: 16.v),
+          // _buildRowbOne(
+          //   bOne: "lbl_c".tr,
+          //   parisFive: "lbl_south_korea".tr,
+          // ),
+          // SizedBox(height: 16.v),
+          // _buildRowbOne(
+          //   bOne: "lbl_d".tr,
+          //   parisFive: "lbl_hong_kong".tr,
+          // ),
           SizedBox(height: 24.v),
           Row(
             children: [
@@ -731,11 +886,16 @@ class HomeScreenPage extends StatelessWidget {
                 imagePath: ImageConstant.imgIcLike,
                 height: 24.adaptSize,
                 width: 24.adaptSize,
-                margin: EdgeInsets.only(),
+                margin: EdgeInsets.only(
+                    // top: 9.v,
+                    // bottom: 8.v,
+                    ),
               ),
               Padding(
                 padding: EdgeInsets.only(
                   left: 4.h,
+                  // top: 13.v,
+                  // bottom: 11.v,
                 ),
                 child: Text(
                   "lbl_2_4k".tr,
@@ -748,11 +908,15 @@ class HomeScreenPage extends StatelessWidget {
                 width: 24.adaptSize,
                 margin: EdgeInsets.only(
                   left: 16.h,
+                  // top: 9.v,
+                  // bottom: 8.v,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(
                   left: 4.h,
+                  // top: 13.v,
+                  // bottom: 11.v,
                 ),
                 child: Text(
                   "lbl_1_8k".tr,
@@ -762,16 +926,32 @@ class HomeScreenPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(
                   left: 16.h,
+                  // top: 9.v,
+                  // bottom: 8.v,
                 ),
                 child: CustomImageView(
                   imagePath: ImageConstant.share,
                   height: 24.adaptSize,
                   width: 24.adaptSize,
                 ),
+
+                // child: Obx(
+                //       () =>
+                //       CustomCheckboxButton(
+                //         text: "lbl_4_8k".tr,
+                //         value: controller.ktwo.value,
+                //         padding: EdgeInsets.symmetric(vertical: 3.v),
+                //         onChange: (value) {
+                //           controller.ktwo.value = value;
+                //         },
+                //       ),
+                // ),
               ),
               Padding(
                 padding: EdgeInsets.only(
                   left: 4.h,
+                  // top: 13.v,
+                  // bottom: 11.v,
                 ),
                 child: Text(
                   "4.8k".tr,
@@ -785,6 +965,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Common widget
   Widget _buildTitleandview({
     required String popular,
     required String viewallOne,
@@ -818,6 +999,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Common widget
   Widget _buildColumnronaldric({
     required String ronaldrichards,
     required String duration,
@@ -842,6 +1024,7 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Common widget
   Widget _buildRowbOne({
     required String bOne,
     required String parisFive,
@@ -889,12 +1072,14 @@ class HomeScreenPage extends StatelessWidget {
     );
   }
 
+  /// Navigates to the latestPollScreen when the action is triggered.
   onTapTxtViewallOne() {
     Get.toNamed(
       AppRoutes.latestPollScreen,
     );
   }
 
+  /// Navigates to the trendingPollsScreen when the action is triggered.
   onTapTxtViewallOne1() {
     Get.toNamed(
       AppRoutes.trendingPollsScreen,

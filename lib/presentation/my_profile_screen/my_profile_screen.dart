@@ -4,7 +4,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../../widgets/app_bar/appbar_leading_iconbutton.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
-import 'controller/my_profile_controller.dart';
+import 'controller/my_profile_controller.dart'; // ignore_for_file: must_be_immutable
 
 class MyProfileScreen extends GetWidget<MyProfileController> {
   const MyProfileScreen({Key? key})
@@ -32,6 +32,9 @@ class MyProfileScreen extends GetWidget<MyProfileController> {
                     imagePath: ImageConstant.avtar,
                     height: 108.adaptSize,
                     width: 108.adaptSize,
+                    // radius: BorderRadius.circular(
+                    //   40.h,
+                    // ),
                   ),
                   Container(
                       height: 34.h,
@@ -57,6 +60,24 @@ class MyProfileScreen extends GetWidget<MyProfileController> {
                       ))
                 ],
               ),
+              // child: Container(
+              //     width: 80.h,
+              //     height: 80.h,
+              //     decoration: ShapeDecoration(
+              //       color: Color(0xFFFE4753),
+              //       shape: OvalBorder(),
+              //     ),
+              //     child: Center(
+              //       child: Text(
+              //         "L",
+              //         style: theme.textTheme.titleMedium!.copyWith(
+              //           color: Colors.white,
+              //           fontSize: 34.fSize,
+              //           fontFamily: 'SF Pro Display',
+              //           fontWeight: FontWeight.w600,
+              //         ),
+              //       ),
+              //     )),
             ),
             AnimationLimiter(
               child: Column(
@@ -72,17 +93,17 @@ class MyProfileScreen extends GetWidget<MyProfileController> {
                     SizedBox(height: 24.v),
                     _buildComponentFiftyTwo(
                       name: "Name".tr,
-                      email: "IFHAL FAIZI".tr,
+                      email: "Ronald richards".tr,
                     ),
                     SizedBox(height: 16.v),
                     _buildComponentFiftyTwo(
                       name: "Email address".tr,
-                      email: "ifhalf21@gmail.com".tr,
+                      email: "ronaldrichards@gmail.com".tr,
                     ),
                     SizedBox(height: 16.v),
                     _buildComponentFiftyTwo(
                       name: "Phone number".tr,
-                      email: "(62) 895346184632".tr,
+                      email: "(405) 555-0128".tr,
                     )
                   ],
                 ),
@@ -94,6 +115,7 @@ class MyProfileScreen extends GetWidget<MyProfileController> {
     );
   }
 
+  /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
       leadingWidth: 58.h,
@@ -101,6 +123,8 @@ class MyProfileScreen extends GetWidget<MyProfileController> {
         imagePath: ImageConstant.back,
         margin: EdgeInsets.only(
           left: 16.h,
+          // top: 18.v,
+          // bottom: 18.v,
         ),
         onTap: () {
           onTapArrowLeft();
@@ -145,6 +169,7 @@ class MyProfileScreen extends GetWidget<MyProfileController> {
     );
   }
 
+  /// Common widget
   Widget _buildComponentFiftyTwo({
     required String name,
     required String email,
@@ -184,6 +209,7 @@ class MyProfileScreen extends GetWidget<MyProfileController> {
     );
   }
 
+  /// Navigates to the previous screen.
   onTapArrowLeft() {
     Get.back();
   }
