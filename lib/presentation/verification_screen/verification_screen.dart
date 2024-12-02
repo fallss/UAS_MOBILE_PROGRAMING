@@ -85,7 +85,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       border: Border.all(
                         color: Colors.black,
                         width: 1.h,
-                      ), // border: Border.all(color: appTheme.textfeild),
+                      ),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     textStyle: TextStyle(
@@ -111,7 +111,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       border: Border.all(
                         color: Color(0xFFFF3E3E),
                         width: 1.h,
-                      ), // border: Border.all(color: appTheme.textfeild),
+                      ),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     textStyle: TextStyle(
@@ -205,26 +205,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
       title: AppbarTitle(
         text: "Verification".tr,
       ),
-      // leading: Column(
-      //   children: [
-      //     Container(
-      //       height: 40.h,
-      //       width: 40.h,
-      //       decoration:BoxDecoration(
-      //         shape: BoxShape.circle,
-      //         color: appTheme.gray50,
-      //
-      //       ),
-      //       child: Center(
-      //         child: CustomImageView(
-      //           imagePath: ImageConstant.back,
-      //           height: 24.adaptSize,
-      //           width: 24.adaptSize,
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
       styleType: Style.bgOutline,
     );
   }

@@ -25,7 +25,7 @@ class CustomBottomBar extends StatelessWidget {
     BottomMenuModel(
       icon: ImageConstant.unselect_polls,
       activeIcon: ImageConstant.polls_select,
-      title: "Polls".tr,
+      title: "Reels".tr,
       type: BottomBarEnum.Favorite,
     ),
     BottomMenuModel(
