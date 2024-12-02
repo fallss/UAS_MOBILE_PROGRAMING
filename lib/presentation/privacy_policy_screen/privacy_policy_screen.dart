@@ -31,7 +31,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '1. Types of data we collect',
+                  '1. Pengumpulan Data Pribadi',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.fSize,
@@ -56,7 +56,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
                   height: 20.h,
                 ),
                 Text(
-                  '2. Use of your personal data ',
+                  '2. Penggunaan Data Pribadi ',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.fSize,
@@ -81,7 +81,7 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
                   height: 20.h,
                 ),
                 Text(
-                  '3.Disclosure of your personal data',
+                  '3.Keamanan Data dan Hak Pengguna',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.fSize,
@@ -103,61 +103,6 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
                     height: 1.3,
                   ),
                 ),
-                // Row(
-                //   children: [
-                //     Obx(() {
-                //       return CustomImageView(
-                //         height: 24.h,
-                //         width: 24.h, onTap: () {
-                //         controller.isCheck.value = !controller.isCheck.value;
-                //       },
-                //         imagePath: controller.isCheck.value ? ImageConstant
-                //             .select_checkBox : ImageConstant.unselect_checkBox,
-                //       );
-                //     }),
-                //     SizedBox(
-                //       width: 12.h,
-                //     ),
-                //     GestureDetector(
-                //       onTap: () {
-                //         controller.isCheck.value = !controller.isCheck.value;
-                //       },
-                //       child: Text.rich(
-                //         TextSpan(
-                //           children: [
-                //             TextSpan(
-                //               text: 'I agree with thr ',
-                //               style: TextStyle(
-                //                 color: Colors.black,
-                //                 fontSize: 17.fSize,
-                //                 fontFamily: 'SF Pro Display',
-                //                 fontWeight: FontWeight.w400,
-                //               ),
-                //             ),
-                //             TextSpan(
-                //               text: 'Privacy Policy',
-                //               style: TextStyle(
-                //                 color: theme.colorScheme.primary,
-                //                 fontSize: 17.fSize,
-                //                 fontFamily: 'SF Pro Display',
-                //                 fontWeight: FontWeight.w400,
-                //               ),
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
-                // SizedBox(
-                //   height: 22.h,
-                // ),
-                // CustomElevatedButton(text: "Confirm".tr,onPressed: () {
-                //   Get.back();
-                // },),
-                // SizedBox(
-                //   height: 38.h,
-                // ),
               ],
             ),
           ),

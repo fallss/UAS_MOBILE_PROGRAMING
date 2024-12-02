@@ -1,19 +1,19 @@
 final Map<String, String> enUs = {
   "lbl_home": "Home",
   "lbl_about1":
-      "Duis tristique diam nunc. Sed at tincidunt orci. Mauris eget congue leo. Cras varius at ante vitae convallis. Duis semper magna nec tortor tincidunt, id tincidunt quam blandit. Vivamus vehicula dictum magna quis eleifend.",
+      "Pada bagian ini, jelaskan dengan jelas visi dan misi perusahaan. Visi mencerminkan tujuan jangka panjang dan harapan perusahaan untuk masa depan, sementara misi menggambarkan langkah-langkah atau nilai-nilai yang dipegang untuk mencapai visi tersebut. Misalnya, Kami bertujuan untuk menjadi pemimpin dalam inovasi teknologi dengan menyediakan solusi yang berdampak dan berkelanjutan bagi pelanggan di seluruh dunia.",
   "lbl_about2":
-      "Sed sollicitudin nisi mollis libero consectetur rutrum. Nam maximus mollis nisl quis facilisis. Integer fermentum commodo nibh. Ut mollis tincidunt hendrerit. Duis ipsum velit, maximus sed commodo imperdiet, dapibus id velit. Nullam in maximus enim. Pellentesque vulputate nisi sit amet lacus pulvinar finibus. ",
+      "Ceritakan perjalanan perusahaan dari awal berdiri hingga saat ini. Jelaskan sejarah singkat perusahaan, bagaimana perusahaan didirikan, siapa pendirinya, serta pencapaian penting yang telah diraih. Misalnya, Didirikan pada tahun 2010, perusahaan kami dimulai dengan tujuan untuk memberikan akses teknologi terbaik bagi UKM, dan kini telah berkembang menjadi pemimpin industri di sektor tersebut. ",
   "lbl_about3":
-      "Sed sollicitudin nisi mollis libero consectetur rutrum. Nam maximus mollis nisl quis facilisis. Integer fermentum commodo nibh. Ut mollis tincidunt hendrerit. Duis ipsum velit, maximus sed commodo imperdiet, dapibus id velit. Nullam in maximus enim. Pellentesque vulputate nisi sit amet lacus pulvinar finibus. Nullam sit amet enim id nibh volutpat gravida vitae in orci. ",
+      "Bagian ini menjelaskan nilai-nilai inti yang menjadi pedoman perusahaan dalam beroperasi, seperti integritas, keberlanjutan, inovasi, dan kepuasan pelanggan. Jelaskan bagaimana nilai-nilai tersebut diterapkan dalam setiap aspek bisnis. Contohnya, Kami berkomitmen untuk menjalankan bisnis dengan integritas dan transparansi, selalu mengutamakan kepuasan pelanggan dan berinovasi untuk masa depan yang lebih baik.",
   "lbl_privacy_policy":
-      "Duis tristique diam nunc. Sed at tincidunt orci. Mauris eget congue leo. Cras varius at ante vitae convallis. Duis semper magna nec tortor tincidunt, id tincidunt quam blandit. Vivamus vehicula dictum magna quis eleifend. ",
+      "Kebijakan privasi harus menjelaskan jenis data pribadi yang dikumpulkan dari pengguna, seperti informasi identitas (nama, alamat email, nomor telepon), informasi penggunaan (alamat IP, data lokasi), atau informasi lain yang relevan. Penting untuk mengungkapkan tujuan pengumpulan data tersebut, apakah untuk meningkatkan pengalaman pengguna, analitik, atau kebutuhan operasional lainnya. ",
   "lbl_terms1":
       "Duis tristique diam nunc. Sed at tincidunt orci. Mauris eget congue leo. Cras varius at ante vitae convallis. Duis semper magna nec tortor tincidunt, id tincidunt quam blandit. Vivamus vehicula dictum magna quis eleifend. ",
   "lbl_terms2":
-      "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "Penjelasan mengenai bagaimana data pribadi yang dikumpulkan akan digunakan harus jelas dan transparan. Ini termasuk untuk tujuan apa data tersebut akan digunakan, misalnya untuk pengiriman komunikasi pemasaran, pengelolaan akun pengguna, atau analitik aplikasi. Selain itu, kebijakan privasi juga harus mencantumkan apakah data akan dibagikan dengan pihak ketiga dan dalam kondisi apa data tersebut dapat dibagikan.",
   "lbl_terms3":
-      "Sed sollicitudin nisi mollis libero consectetur rutrum. Nam maximus mollis nisl quis facilisis. Integer fermentum commodo nibh. Ut mollis tincidunt hendrerit. Duis ipsum velit, maximus sed commodo imperdiet, dapibus id velit. Nullam in maximus enim. Pellentesque vulputate nisi sit amet lacus pulvinar finibus. Nullam sit amet enim id nibh volutpat gravida vitae in orci. ",
+      "Kebijakan privasi harus mencakup informasi mengenai langkah-langkah yang diambil untuk melindungi data pribadi pengguna dari akses yang tidak sah atau penggunaan yang salah. Ini termasuk penggunaan enkripsi, perlindungan server, dan prosedur keamanan lainnya. Selain itu, kebijakan harus menjelaskan hak pengguna terkait data mereka, seperti hak untuk mengakses, mengoreksi, atau menghapus informasi pribadi yang telah dikumpulkan. ",
   "lbl_insights": "Insights",
   "lbl_profile": "Profile",
   "lbl_06_active_polls": "06 Active polls",

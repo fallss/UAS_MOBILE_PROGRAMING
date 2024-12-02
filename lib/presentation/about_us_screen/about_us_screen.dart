@@ -27,7 +27,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '1. Types of data we collect',
+                  '1. Visi dan Misi',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.fSize,
@@ -52,7 +52,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                   height: 20.h,
                 ),
                 Text(
-                  '2. Use of your personal data ',
+                  '2. Sejarah dan Latar Belakang  ',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.fSize,
@@ -77,7 +77,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                   height: 20.h,
                 ),
                 Text(
-                  '3.Disclosure of your personal data',
+                  '3.Nilai dan Prinsip ',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.fSize,
