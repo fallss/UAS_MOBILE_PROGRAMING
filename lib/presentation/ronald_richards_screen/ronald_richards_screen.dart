@@ -25,25 +25,6 @@ class RonaldRichardsScreen extends GetWidget<RonaldRichardsController> {
         child: Column(
           children: [
             SizedBox(height: 24.v),
-            // Hero(
-            //    tag: "ImageConstant.imgEllipse225",
-            //   child:  Image.asset(
-            //     ImageConstant.imgEllipse225,
-            //     height: 97.adaptSize,
-            //     width: 97.adaptSize,
-            //     fit:  BoxFit.cover,
-            //
-            //   ),
-            //   CustomImageView(
-            //     imagePath: ImageConstant.imgEllipse225,
-            //     height: 97.adaptSize,
-            //     width: 97.adaptSize,
-            //     radius: BorderRadius.circular(
-            //       48.h,
-            //     ),
-            //   ),
-            // ),
-
             CustomImageView(
               imagePath: ImageConstant.imgEllipse225,
               height: 97.adaptSize,
@@ -71,7 +52,6 @@ class RonaldRichardsScreen extends GetWidget<RonaldRichardsController> {
               color: appTheme.gray300,
             ),
             SizedBox(height: 16.v),
-
             AnimationLimiter(
               child: Expanded(
                 child: ListView(
@@ -102,24 +82,6 @@ class RonaldRichardsScreen extends GetWidget<RonaldRichardsController> {
                 ),
               ),
             ),
-            // Expanded(
-            //     child: ListView(
-            //       physics: BouncingScrollPhysics(),
-            //       padding: EdgeInsets.only(bottom: 16.h),
-            //       children: [
-            //         Align(
-            //           alignment: Alignment.centerLeft,
-            //           child: Text(
-            //             "lbl_listing".tr,
-            //             style: theme.textTheme.titleLarge,
-            //           ),
-            //         ),
-            //         SizedBox(height: 12.v),
-            //         _buildColumnlineone(),
-            //         SizedBox(height: 16.v),
-            //         _buildColumnspacer(),
-            //       ],
-            //     ))
           ],
         ),
       ),

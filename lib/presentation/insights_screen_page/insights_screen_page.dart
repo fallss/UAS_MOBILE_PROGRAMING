@@ -28,7 +28,6 @@ class InsightsScreenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: _buildAppbar(),
       body: SafeArea(
         child: Column(
           children: [
@@ -50,55 +49,33 @@ class InsightsScreenPage extends StatelessWidget {
             ),
             controller.insightsScreenModelObj.value.listicheartOneItemList.value
                     .isNotEmpty
-                ?
-            Expanded(
-              child: AnimationLimiter(
-                child: ListView(
-                  shrinkWrap: true,
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 16.h, vertical: 16.v),
-                  children: AnimationConfiguration.toStaggeredList(
-                    duration: const Duration(milliseconds: 375),
-                    childAnimationBuilder: (widget) => SlideAnimation(
-                   
-                     
-                      horizontalOffset: 50.0,
-                      child: FadeInAnimation(
-                        child: widget,
+                ? Expanded(
+                    child: AnimationLimiter(
+                      child: ListView(
+                        shrinkWrap: true,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 16.h, vertical: 16.v),
+                        children: AnimationConfiguration.toStaggeredList(
+                          duration: const Duration(milliseconds: 375),
+                          childAnimationBuilder: (widget) => SlideAnimation(
+                            horizontalOffset: 50.0,
+                            child: FadeInAnimation(
+                              child: widget,
+                            ),
+                          ),
+                          children: [
+                            _buildColumnspacer(),
+                            SizedBox(height: 16.v),
+                            _buildColumnspacer1(),
+                            SizedBox(height: 16.v),
+                            _buildColumnspacer2(),
+                            SizedBox(height: 16.v),
+                            _buildColumnspacer3()
+                          ],
+                        ),
                       ),
                     ),
-                    children: [
-                      _buildColumnspacer(),
-                      SizedBox(height: 16.v),
-                      _buildColumnspacer1(),
-                      SizedBox(height: 16.v),
-                      _buildColumnspacer2(),
-                      SizedBox(height: 16.v),
-                      _buildColumnspacer3()
-                    ],
-                  ),
-                ),
-              ),
-            )
-
-            // Expanded(
-            //         child: ListView(
-            //           shrinkWrap: true,
-            //           padding: EdgeInsets.symmetric(
-            //               horizontal: 16.h, vertical: 16.v),
-            //           children: [
-            //             _buildColumnspacer(),
-            //             SizedBox(height: 16.v),
-            //             _buildColumnspacer1(),
-            //             SizedBox(height: 16.v),
-            //             _buildColumnspacer2(),
-            //             SizedBox(height: 16.v),
-            //             _buildColumnspacer3()
-            //           ],
-            //         ),
-            //       )
-
-
+                  )
                 : Expanded(
                     child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 35.h),
@@ -154,36 +131,8 @@ class InsightsScreenPage extends StatelessWidget {
         ),
       ),
     );
-
-    //   SafeArea(
-    //   child: Scaffold(
-    //     appBar: _buildAppbar(),
-    //     body: SizedBox(
-    //       width: SizeUtils.width,
-    //       child: SingleChildScrollView(
-    //         padding: EdgeInsets.only(top: 16.v),
-    //         child: Container(
-    //           margin: EdgeInsets.only(bottom: 5.v),
-    //           padding: EdgeInsets.symmetric(horizontal: 16.h),
-    //           child: Column(
-    //             children: [
-    //               _buildColumnspacer(),
-    //               SizedBox(height: 16.v),
-    //               _buildColumnspacer1(),
-    //               SizedBox(height: 16.v),
-    //               _buildColumnspacer2(),
-    //               SizedBox(height: 16.v),
-    //               _buildColumnspacer3()
-    //             ],
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //   ),
-    // );
   }
 
-  /// Section Widget
   Widget _buildFollowing() {
     return CustomOutlinedButton(
       width: 116.h,
@@ -196,7 +145,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildSubmit() {
     return CustomElevatedButton(
       width: 99.h,
@@ -209,7 +157,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumnspacer() {
     final List<NextTripModel> list = DataFile.pollList;
     return Container(
@@ -235,7 +182,6 @@ class InsightsScreenPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(
                     left: 12.h,
-                    // top: 2.v,
                   ),
                   child: _buildColumnronaldric(
                     ronaldrichards: "lbl_ronald_richards".tr,
@@ -243,7 +189,6 @@ class InsightsScreenPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Spacer(),
               _buildFollowing()
             ],
           ),
@@ -255,7 +200,6 @@ class InsightsScreenPage extends StatelessWidget {
             style: CustomTextStyles.titleMediumBlack90017,
           ),
           SizedBox(height: 16.v),
-
           ListView.separated(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -283,18 +227,12 @@ class InsightsScreenPage extends StatelessWidget {
                               borderRadius: BorderRadiusStyle.customBorderTL11,
                             ),
                             child: Row(
-                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(width: 12.h),
                                 Container(
                                   width: 26.h,
                                   height: 26.h,
-                                  // margin: EdgeInsets.only(bottom: 1.v),
-                                  // padding: EdgeInsets.symmetric(
-                                  //   horizontal: 6.h,
-                                  //   vertical: 2.v,
-                                  // ),
                                   decoration: AppDecoration.fillGray.copyWith(
                                     borderRadius:
                                         BorderRadiusStyle.roundedBorder12,
@@ -335,251 +273,6 @@ class InsightsScreenPage extends StatelessWidget {
                     height: 16.h,
                   ),
               itemCount: list.length),
-          // Container(
-          //   decoration: AppDecoration.outlineGray.copyWith(
-          //     borderRadius: BorderRadiusStyle.roundedBorder12,
-          //   ),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       Container(
-          //         width: 92.h,
-          //         padding: EdgeInsets.symmetric(vertical: 10.v),
-          //         decoration: AppDecoration.fillDeepPurple.copyWith(
-          //           borderRadius: BorderRadiusStyle.customBorderTL11,
-          //         ),
-          //         child: Row(
-          //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //           crossAxisAlignment: CrossAxisAlignment.start,
-          //           children: [
-          //             Container(
-          //               width: 26.adaptSize,
-          //               margin: EdgeInsets.only(bottom: 1.v),
-          //               padding: EdgeInsets.symmetric(
-          //                 horizontal: 6.h,
-          //                 vertical: 2.v,
-          //               ),
-          //               decoration: AppDecoration.fillGray.copyWith(
-          //                 borderRadius: BorderRadiusStyle.roundedBorder12,
-          //               ),
-          //               child: Text(
-          //                 "lbl_a".tr.toUpperCase(),
-          //                 style: theme.textTheme.titleMedium,
-          //               ),
-          //             ),
-          //             Padding(
-          //               padding: EdgeInsets.only(
-          //                 top: 3.v,
-          //                 bottom: 1.v,
-          //               ),
-          //               child: Text(
-          //                 "lbl_paris".tr,
-          //                 style: theme.textTheme.bodyLarge,
-          //               ),
-          //             )
-          //           ],
-          //         ),
-          //       ),
-          //       Padding(
-          //         padding: EdgeInsets.only(
-          //           top: 13.v,
-          //           right: 15.h,
-          //           bottom: 12.v,
-          //         ),
-          //         child: Text(
-          //           "lbl_09".tr,
-          //           style: theme.textTheme.bodyLarge,
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // ),
-          // SizedBox(height: 16.v),
-          // Container(
-          //   decoration: AppDecoration.outlineGray.copyWith(
-          //     borderRadius: BorderRadiusStyle.roundedBorder12,
-          //   ),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       Container(
-          //         padding: EdgeInsets.symmetric(
-          //           horizontal: 12.h,
-          //           vertical: 10.v,
-          //         ),
-          //         decoration: AppDecoration.fillIndigo.copyWith(
-          //           borderRadius: BorderRadiusStyle.customBorderTL11,
-          //         ),
-          //         child: Row(
-          //           crossAxisAlignment: CrossAxisAlignment.start,
-          //           children: [
-          //             Container(
-          //               width: 26.adaptSize,
-          //               margin: EdgeInsets.only(bottom: 1.v),
-          //               padding: EdgeInsets.symmetric(
-          //                 horizontal: 7.h,
-          //                 vertical: 2.v,
-          //               ),
-          //               decoration: AppDecoration.fillGray.copyWith(
-          //                 borderRadius: BorderRadiusStyle.roundedBorder12,
-          //               ),
-          //               child: Text(
-          //                 "lbl_b".tr.toUpperCase(),
-          //                 style: theme.textTheme.titleMedium,
-          //               ),
-          //             ),
-          //             Padding(
-          //               padding: EdgeInsets.only(
-          //                 left: 8.h,
-          //                 top: 3.v,
-          //                 bottom: 1.v,
-          //               ),
-          //               child: Text(
-          //                 "lbl_paris".tr,
-          //                 style: theme.textTheme.bodyLarge,
-          //               ),
-          //             )
-          //           ],
-          //         ),
-          //       ),
-          //       Padding(
-          //         padding: EdgeInsets.only(
-          //           top: 13.v,
-          //           right: 15.h,
-          //           bottom: 12.v,
-          //         ),
-          //         child: Text(
-          //           "lbl_29".tr,
-          //           style: theme.textTheme.bodyLarge,
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // ),
-          // SizedBox(height: 16.v),
-          // Container(
-          //   decoration: AppDecoration.outlinePrimary.copyWith(
-          //     borderRadius: BorderRadiusStyle.roundedBorder12,
-          //   ),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       Container(
-          //         padding: EdgeInsets.symmetric(
-          //           horizontal: 12.h,
-          //           vertical: 10.v,
-          //         ),
-          //         decoration: AppDecoration.fillIndigo5001.copyWith(
-          //           borderRadius: BorderRadiusStyle.customBorderTL11,
-          //         ),
-          //         child: Row(
-          //           crossAxisAlignment: CrossAxisAlignment.start,
-          //           children: [
-          //             Container(
-          //               width: 26.adaptSize,
-          //               margin: EdgeInsets.only(bottom: 1.v),
-          //               padding: EdgeInsets.symmetric(
-          //                 horizontal: 6.h,
-          //                 vertical: 2.v,
-          //               ),
-          //               decoration: AppDecoration.fillGray.copyWith(
-          //                 borderRadius: BorderRadiusStyle.roundedBorder12,
-          //               ),
-          //               child: Text(
-          //                 "lbl_c".tr.toUpperCase(),
-          //                 style: theme.textTheme.titleMedium,
-          //               ),
-          //             ),
-          //             Padding(
-          //               padding: EdgeInsets.only(
-          //                 left: 8.h,
-          //                 top: 3.v,
-          //                 bottom: 1.v,
-          //               ),
-          //               child: Text(
-          //                 "lbl_paris".tr,
-          //                 style: theme.textTheme.bodyLarge,
-          //               ),
-          //             )
-          //           ],
-          //         ),
-          //       ),
-          //       Padding(
-          //         padding: EdgeInsets.only(
-          //           top: 13.v,
-          //           right: 15.h,
-          //           bottom: 12.v,
-          //         ),
-          //         child: Text(
-          //           "lbl_33".tr,
-          //           style: theme.textTheme.bodyLarge,
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // ),
-          // SizedBox(height: 16.v),
-          // Container(
-          //   decoration: AppDecoration.outlineGray300.copyWith(
-          //     borderRadius: BorderRadiusStyle.roundedBorder12,
-          //   ),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       Container(
-          //         padding: EdgeInsets.symmetric(
-          //           horizontal: 12.h,
-          //           vertical: 10.v,
-          //         ),
-          //         decoration: AppDecoration.fillIndigo.copyWith(
-          //           borderRadius: BorderRadiusStyle.customBorderTL11,
-          //         ),
-          //         child: Row(
-          //           crossAxisAlignment: CrossAxisAlignment.start,
-          //           children: [
-          //             Container(
-          //               width: 26.adaptSize,
-          //               margin: EdgeInsets.only(bottom: 1.v),
-          //               padding: EdgeInsets.symmetric(
-          //                 horizontal: 7.h,
-          //                 vertical: 2.v,
-          //               ),
-          //               decoration: AppDecoration.fillGray.copyWith(
-          //                 borderRadius: BorderRadiusStyle.roundedBorder12,
-          //               ),
-          //               child: Text(
-          //                 "lbl_d".tr.toUpperCase(),
-          //                 style: theme.textTheme.titleMedium,
-          //               ),
-          //             ),
-          //             Padding(
-          //               padding: EdgeInsets.only(
-          //                 left: 8.h,
-          //                 top: 3.v,
-          //                 bottom: 1.v,
-          //               ),
-          //               child: Text(
-          //                 "lbl_paris".tr,
-          //                 style: theme.textTheme.bodyLarge,
-          //               ),
-          //             )
-          //           ],
-          //         ),
-          //       ),
-          //       Padding(
-          //         padding: EdgeInsets.only(
-          //           top: 13.v,
-          //           right: 15.h,
-          //           bottom: 12.v,
-          //         ),
-          //         child: Text(
-          //           "lbl_32".tr,
-          //           style: theme.textTheme.bodyLarge,
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // ),
           SizedBox(height: 24.v),
           Row(
             children: [
@@ -656,367 +349,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  // /// Section Widget
-  // Widget _buildColumnspacer() {
-  //   return Container(
-  //     padding: EdgeInsets.all(15.h),
-  //     decoration: AppDecoration.outlineGray.copyWith(
-  //       borderRadius: BorderRadiusStyle.roundedBorder12,
-  //     ),
-  //     child: Column(
-  //       mainAxisSize: MainAxisSize.min,
-  //       crossAxisAlignment: CrossAxisAlignment.start,
-  //       children: [
-  //         Row(
-  //           children: [
-  //             CustomImageView(
-  //               imagePath: ImageConstant.imgEllipse241,
-  //               height: 50.adaptSize,
-  //               width: 50.adaptSize,
-  //               radius: BorderRadius.circular(
-  //                 25.h,
-  //               ),
-  //             ),
-  //             Expanded(
-  //               child: Padding(
-  //                 padding: EdgeInsets.only(
-  //                   left: 12.h,
-  //                   top: 2.v,
-  //                 ),
-  //                 child: _buildColumnronaldric(
-  //                   ronaldrichards: "lbl_ronald_richards".tr,
-  //                   duration: "lbl_1_hours_ago".tr,
-  //                 ),
-  //               ),
-  //             ),
-  //             Spacer(),
-  //             _buildFollowing()
-  //           ],
-  //         ),
-  //         SizedBox(height: 12.v),
-  //         Divider(),
-  //         SizedBox(height: 20.v),
-  //         Text(
-  //           "msg_which_city_is_best".tr,
-  //           style: CustomTextStyles.titleMediumBlack900,
-  //         ),
-  //         SizedBox(height: 15.v),
-  //         Container(
-  //           decoration: AppDecoration.outlineGray.copyWith(
-  //             borderRadius: BorderRadiusStyle.roundedBorder12,
-  //           ),
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             children: [
-  //               Container(
-  //                 width: 92.h,
-  //                 padding: EdgeInsets.symmetric(vertical: 10.v),
-  //                 decoration: AppDecoration.fillDeepPurple.copyWith(
-  //                   borderRadius: BorderRadiusStyle.customBorderTL11,
-  //                 ),
-  //                 child: Row(
-  //                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //                   crossAxisAlignment: CrossAxisAlignment.start,
-  //                   children: [
-  //                     Container(
-  //                       width: 26.adaptSize,
-  //                       margin: EdgeInsets.only(bottom: 1.v),
-  //                       padding: EdgeInsets.symmetric(
-  //                         horizontal: 6.h,
-  //                         vertical: 2.v,
-  //                       ),
-  //                       decoration: AppDecoration.fillGray.copyWith(
-  //                         borderRadius: BorderRadiusStyle.roundedBorder12,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_a".tr.toUpperCase(),
-  //                         style: CustomTextStyles.titleLargeOnPrimary,
-  //                       ),
-  //                     ),
-  //                     Padding(
-  //                       padding: EdgeInsets.only(
-  //                         top: 3.v,
-  //                         bottom: 1.v,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_paris".tr,
-  //                         style: theme.textTheme.bodyLarge,
-  //                       ),
-  //                     )
-  //                   ],
-  //                 ),
-  //               ),
-  //               Padding(
-  //                 padding: EdgeInsets.only(
-  //                   top: 13.v,
-  //                   right: 15.h,
-  //                   bottom: 12.v,
-  //                 ),
-  //                 child: Text(
-  //                   "lbl_09".tr,
-  //                   style: theme.textTheme.bodyLarge,
-  //                 ),
-  //               )
-  //             ],
-  //           ),
-  //         ),
-  //         SizedBox(height: 16.v),
-  //         Container(
-  //           decoration: AppDecoration.outlineGray.copyWith(
-  //             borderRadius: BorderRadiusStyle.roundedBorder12,
-  //           ),
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             children: [
-  //               Container(
-  //                 padding: EdgeInsets.symmetric(
-  //                   horizontal: 12.h,
-  //                   vertical: 10.v,
-  //                 ),
-  //                 decoration: AppDecoration.fillIndigo.copyWith(
-  //                   borderRadius: BorderRadiusStyle.customBorderTL11,
-  //                 ),
-  //                 child: Row(
-  //                   crossAxisAlignment: CrossAxisAlignment.start,
-  //                   children: [
-  //                     Container(
-  //                       width: 26.adaptSize,
-  //                       margin: EdgeInsets.only(bottom: 1.v),
-  //                       padding: EdgeInsets.symmetric(
-  //                         horizontal: 7.h,
-  //                         vertical: 2.v,
-  //                       ),
-  //                       decoration: AppDecoration.fillGray.copyWith(
-  //                         borderRadius: BorderRadiusStyle.roundedBorder12,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_b".tr.toUpperCase(),
-  //                         style: CustomTextStyles.titleLargeOnPrimary,
-  //                       ),
-  //                     ),
-  //                     Padding(
-  //                       padding: EdgeInsets.only(
-  //                         left: 8.h,
-  //                         top: 3.v,
-  //                         bottom: 1.v,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_paris".tr,
-  //                         style: theme.textTheme.bodyLarge,
-  //                       ),
-  //                     )
-  //                   ],
-  //                 ),
-  //               ),
-  //               Padding(
-  //                 padding: EdgeInsets.only(
-  //                   top: 13.v,
-  //                   right: 15.h,
-  //                   bottom: 12.v,
-  //                 ),
-  //                 child: Text(
-  //                   "lbl_29".tr,
-  //                   style: theme.textTheme.bodyLarge,
-  //                 ),
-  //               )
-  //             ],
-  //           ),
-  //         ),
-  //         SizedBox(height: 16.v),
-  //         Container(
-  //           decoration: AppDecoration.outlinePrimary.copyWith(
-  //             borderRadius: BorderRadiusStyle.roundedBorder12,
-  //           ),
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             children: [
-  //               Container(
-  //                 padding: EdgeInsets.symmetric(
-  //                   horizontal: 12.h,
-  //                   vertical: 10.v,
-  //                 ),
-  //                 decoration: AppDecoration.fillIndigo5001.copyWith(
-  //                   borderRadius: BorderRadiusStyle.customBorderTL11,
-  //                 ),
-  //                 child: Row(
-  //                   crossAxisAlignment: CrossAxisAlignment.start,
-  //                   children: [
-  //                     Container(
-  //                       width: 26.adaptSize,
-  //                       margin: EdgeInsets.only(bottom: 1.v),
-  //                       padding: EdgeInsets.symmetric(
-  //                         horizontal: 6.h,
-  //                         vertical: 2.v,
-  //                       ),
-  //                       decoration: AppDecoration.fillGray.copyWith(
-  //                         borderRadius: BorderRadiusStyle.roundedBorder12,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_c".tr.toUpperCase(),
-  //                         style: CustomTextStyles.titleMediumBlack900,
-  //                       ),
-  //                     ),
-  //                     Padding(
-  //                       padding: EdgeInsets.only(
-  //                         left: 8.h,
-  //                         top: 3.v,
-  //                         bottom: 1.v,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_paris".tr,
-  //                         style: theme.textTheme.bodyLarge,
-  //                       ),
-  //                     )
-  //                   ],
-  //                 ),
-  //               ),
-  //               Padding(
-  //                 padding: EdgeInsets.only(
-  //                   top: 13.v,
-  //                   right: 15.h,
-  //                   bottom: 12.v,
-  //                 ),
-  //                 child: Text(
-  //                   "lbl_33".tr,
-  //                   style: theme.textTheme.bodyLarge,
-  //                 ),
-  //               )
-  //             ],
-  //           ),
-  //         ),
-  //         SizedBox(height: 16.v),
-  //         Container(
-  //           decoration: AppDecoration.outlineGray300.copyWith(
-  //             borderRadius: BorderRadiusStyle.roundedBorder12,
-  //           ),
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //             children: [
-  //               Container(
-  //                 padding: EdgeInsets.symmetric(
-  //                   horizontal: 12.h,
-  //                   vertical: 10.v,
-  //                 ),
-  //                 decoration: AppDecoration.fillIndigo.copyWith(
-  //                   borderRadius: BorderRadiusStyle.customBorderTL11,
-  //                 ),
-  //                 child: Row(
-  //                   crossAxisAlignment: CrossAxisAlignment.start,
-  //                   children: [
-  //                     Container(
-  //                       width: 26.adaptSize,
-  //                       margin: EdgeInsets.only(bottom: 1.v),
-  //                       padding: EdgeInsets.symmetric(
-  //                         horizontal: 7.h,
-  //                         vertical: 2.v,
-  //                       ),
-  //                       decoration: AppDecoration.fillGray.copyWith(
-  //                         borderRadius: BorderRadiusStyle.roundedBorder12,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_d".tr.toUpperCase(),
-  //                         style: CustomTextStyles.bodyMediumPrimary,
-  //                       ),
-  //                     ),
-  //                     Padding(
-  //                       padding: EdgeInsets.only(
-  //                         left: 8.h,
-  //                         top: 3.v,
-  //                         bottom: 1.v,
-  //                       ),
-  //                       child: Text(
-  //                         "lbl_paris".tr,
-  //                         style: theme.textTheme.bodyLarge,
-  //                       ),
-  //                     )
-  //                   ],
-  //                 ),
-  //               ),
-  //               Padding(
-  //                 padding: EdgeInsets.only(
-  //                   top: 13.v,
-  //                   right: 15.h,
-  //                   bottom: 12.v,
-  //                 ),
-  //                 child: Text(
-  //                   "lbl_32".tr,
-  //                   style: theme.textTheme.bodyLarge,
-  //                 ),
-  //               )
-  //             ],
-  //           ),
-  //         ),
-  //         SizedBox(height: 24.v),
-  //         Row(
-  //           children: [
-  //             _buildSubmit(),
-  //             Spacer(),
-  //             CustomImageView(
-  //               imagePath: ImageConstant.imgIcLike,
-  //               height: 24.adaptSize,
-  //               width: 24.adaptSize,
-  //               margin: EdgeInsets.only(
-  //                 top: 9.v,
-  //                 bottom: 8.v,
-  //               ),
-  //             ),
-  //             Padding(
-  //               padding: EdgeInsets.only(
-  //                 left: 4.h,
-  //                 top: 13.v,
-  //                 bottom: 11.v,
-  //               ),
-  //               child: Text(
-  //                 "lbl_2_4k".tr,
-  //                 style: CustomTextStyles.bodyMediumBlack900,
-  //               ),
-  //             ),
-  //             CustomImageView(
-  //               imagePath: ImageConstant.imgIcComment,
-  //               height: 24.adaptSize,
-  //               width: 24.adaptSize,
-  //               margin: EdgeInsets.only(
-  //                 left: 16.h,
-  //                 top: 9.v,
-  //                 bottom: 8.v,
-  //               ),
-  //             ),
-  //             Padding(
-  //               padding: EdgeInsets.only(
-  //                 left: 4.h,
-  //                 top: 13.v,
-  //                 bottom: 11.v,
-  //               ),
-  //               child: Text(
-  //                 "lbl_1_8k".tr,
-  //                 style: theme.textTheme.bodyMedium,
-  //               ),
-  //             ),
-  //             Padding(
-  //               padding: EdgeInsets.only(
-  //                 left: 16.h,
-  //                 top: 9.v,
-  //                 bottom: 8.v,
-  //               ),
-  //               child: Obx(
-  //                 () => CustomCheckboxButton(
-  //                   text: "lbl_4_8k".tr,
-  //                   value: controller.k.value,
-  //                   padding: EdgeInsets.symmetric(vertical: 3.v),
-  //                   onChange: (value) {
-  //                     controller.k.value = value;
-  //                   },
-  //                 ),
-  //               ),
-  //             )
-  //           ],
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  /// Section Widget
   Widget _buildFollowing1() {
     return CustomOutlinedButton(
       width: 116.h,
@@ -1029,7 +361,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildSubmit1() {
     return CustomElevatedButton(
       width: 99.h,
@@ -1042,7 +373,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumnspacer1() {
     return Container(
       padding: EdgeInsets.all(15.h),
@@ -1067,7 +397,6 @@ class InsightsScreenPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(
                     left: 12.h,
-                    // top: 4.v,
                   ),
                   child: _buildColumnjennywils(
                     jennywilsonOne: "lbl_jenny_wilson".tr,
@@ -1075,7 +404,6 @@ class InsightsScreenPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Spacer(),
               _buildFollowing1()
             ],
           ),
@@ -1189,7 +517,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumnspacer2() {
     return Container(
       padding: EdgeInsets.all(15.h),
@@ -1214,7 +541,6 @@ class InsightsScreenPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(
                     left: 12.h,
-                    // top: 4.v,
                   ),
                   child: _buildColumnjennywils(
                     jennywilsonOne: "lbl_jenny_wilson".tr,
@@ -1222,7 +548,6 @@ class InsightsScreenPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Spacer(),
               CustomOutlinedButton(
                 width: 116.h,
                 text: "lbl_following".tr,
@@ -1318,7 +643,6 @@ class InsightsScreenPage extends StatelessWidget {
                   style: theme.textTheme.bodyMedium,
                 ),
               ),
-
               Padding(
                 padding: EdgeInsets.only(
                   left: 16.h,
@@ -1343,23 +667,6 @@ class InsightsScreenPage extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
               )
-              // Padding(
-              //   padding: EdgeInsets.only(
-              //     left: 16.h,
-              //     top: 9.v,
-              //     bottom: 8.v,
-              //   ),
-              //   child: Obx(
-              //     () => CustomCheckboxButton(
-              //       text: "lbl_4_8k".tr,
-              //       value: controller.ktwo.value,
-              //       padding: EdgeInsets.symmetric(vertical: 3.v),
-              //       onChange: (value) {
-              //         controller.ktwo.value = value;
-              //       },
-              //     ),
-              //   ),
-              // )
             ],
           )
         ],
@@ -1367,7 +674,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildFollowing2() {
     return CustomOutlinedButton(
       width: 116.h,
@@ -1380,153 +686,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Section Widget
-  // Widget _buildColumnwhichcity() {
-  //   return Column(
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     children: [
-  //       Text(
-  //         "msg_which_car_brand".tr,
-  //         style: CustomTextStyles.titleMediumBlack900,
-  //       ),
-  //       SizedBox(height: 15.v),
-  //       _buildRowbOne(
-  //         bOne: "lbl_a".tr,
-  //         parisFive: "lbl_lamborghini".tr,
-  //       ),
-  //       SizedBox(height: 16.v),
-  //       _buildRowbOne(
-  //         bOne: "lbl_b".tr,
-  //         parisFive: "lbl_toyota".tr,
-  //       ),
-  //       SizedBox(height: 16.v),
-  //       _buildRowbOne(
-  //         bOne: "lbl_c".tr,
-  //         parisFive: "lbl_range_rover".tr,
-  //       ),
-  //       SizedBox(height: 16.v),
-  //       _buildRowbOne(
-  //         bOne: "lbl_d".tr,
-  //         parisFive: "lbl_bmw".tr,
-  //       ),
-  //       SizedBox(height: 24.v),
-  //       Row(
-  //         children: [
-  //           CustomElevatedButton(
-  //             width: 99.h,
-  //             text: "lbl_submit".tr,
-  //             buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
-  //           ),
-  //           Spacer(),
-  //           CustomImageView(
-  //             imagePath: ImageConstant.imgIcLike,
-  //             height: 24.adaptSize,
-  //             width: 24.adaptSize,
-  //             margin: EdgeInsets.only(
-  //               top: 9.v,
-  //               bottom: 8.v,
-  //             ),
-  //           ),
-  //           Padding(
-  //             padding: EdgeInsets.only(
-  //               left: 4.h,
-  //               top: 13.v,
-  //               bottom: 11.v,
-  //             ),
-  //             child: Text(
-  //               "lbl_2_4k".tr,
-  //               style: CustomTextStyles.bodyMediumBlack900,
-  //             ),
-  //           ),
-  //           CustomImageView(
-  //             imagePath: ImageConstant.imgIcComment,
-  //             height: 24.adaptSize,
-  //             width: 24.adaptSize,
-  //             margin: EdgeInsets.only(
-  //               left: 16.h,
-  //               top: 9.v,
-  //               bottom: 8.v,
-  //             ),
-  //           ),
-  //           Padding(
-  //             padding: EdgeInsets.only(
-  //               left: 4.h,
-  //               top: 13.v,
-  //               bottom: 11.v,
-  //             ),
-  //             child: Text(
-  //               "lbl_1_8k".tr,
-  //               style: theme.textTheme.bodyMedium,
-  //             ),
-  //           ),
-  //           Padding(
-  //             padding: EdgeInsets.only(
-  //               left: 16.h,
-  //               top: 9.v,
-  //               bottom: 8.v,
-  //             ),
-  //             child: Obx(
-  //               () => CustomCheckboxButton(
-  //                 text: "lbl_4_8k".tr,
-  //                 value: controller.kthree.value,
-  //                 padding: EdgeInsets.symmetric(vertical: 3.v),
-  //                 onChange: (value) {
-  //                   controller.kthree.value = value;
-  //                 },
-  //               ),
-  //             ),
-  //           )
-  //         ],
-  //       )
-  //     ],
-  //   );
-  // }
-
-  /// Section Widget
-  // Widget _buildColumnspacer3() {
-  //   return Container(
-  //     padding: EdgeInsets.all(15.h),
-  //     decoration: AppDecoration.outlineGray.copyWith(
-  //       borderRadius: BorderRadiusStyle.roundedBorder12,
-  //     ),
-  //     child: Column(
-  //       mainAxisSize: MainAxisSize.min,
-  //       children: [
-  //         Row(
-  //           mainAxisAlignment: MainAxisAlignment.center,
-  //           children: [
-  //             CustomImageView(
-  //               imagePath: ImageConstant.imgEllipse241,
-  //               height: 50.adaptSize,
-  //               width: 50.adaptSize,
-  //               radius: BorderRadius.circular(
-  //                 25.h,
-  //               ),
-  //             ),
-  //             Expanded(
-  //               child: Padding(
-  //                 padding: EdgeInsets.only(
-  //                   left: 12.h,
-  //                   top: 2.v,
-  //                 ),
-  //                 child: _buildColumnronaldric(
-  //                   ronaldrichards: "lbl_ronald_richards".tr,
-  //                   duration: "lbl_1_hours_ago".tr,
-  //                 ),
-  //               ),
-  //             ),
-  //             Spacer(),
-  //             _buildFollowing2()
-  //           ],
-  //         ),
-  //         SizedBox(height: 12.v),
-  //         Divider(),
-  //         SizedBox(height: 20.v),
-  //         _buildColumnwhichcity()
-  //       ],
-  //     ),
-  //   );
-  // }
   Widget _buildColumnspacer3() {
     final List<TipsList> list = DataFile.brandList;
     return Container(
@@ -1552,7 +711,6 @@ class InsightsScreenPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(
                     left: 12.h,
-                    // top: 2.v,
                   ),
                   child: _buildColumnronaldric(
                     ronaldrichards: "lbl_ronald_richards".tr,
@@ -1560,7 +718,6 @@ class InsightsScreenPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Spacer(),
               _buildFollowing2()
             ],
           ),
@@ -1572,7 +729,6 @@ class InsightsScreenPage extends StatelessWidget {
             style: CustomTextStyles.titleMediumBlack90017,
           ),
           SizedBox(height: 16.v),
-
           ListView.separated(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -1598,25 +754,6 @@ class InsightsScreenPage extends StatelessWidget {
                     height: 16.h,
                   ),
               itemCount: list.length),
-          // _buildRowbOne(
-          //   bOne: "lbl_a".tr,
-          //   parisFive: "lbl_lamborghini".tr,
-          // ),
-          // SizedBox(height: 16.v),
-          // _buildRowbOne(
-          //   bOne: "lbl_b".tr,
-          //   parisFive: "lbl_toyota".tr,
-          // ),
-          // SizedBox(height: 16.v),
-          // _buildRowbOne(
-          //   bOne: "lbl_c".tr,
-          //   parisFive: "lbl_range_rover".tr,
-          // ),
-          // SizedBox(height: 16.v),
-          // _buildRowbOne(
-          //   bOne: "lbl_d".tr,
-          //   parisFive: "lbl_bmw".tr,
-          // ),
           SizedBox(height: 24.v),
           Row(
             children: [
@@ -1694,7 +831,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Common widget
   Widget _buildColumnjennywils({
     required String jennywilsonOne,
     required String duration,
@@ -1719,7 +855,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Common widget
   Widget _buildColumnronaldric({
     required String ronaldrichards,
     required String duration,
@@ -1744,7 +879,6 @@ class InsightsScreenPage extends StatelessWidget {
     );
   }
 
-  /// Common widget
   Widget _buildRowbOne({
     required String bOne,
     required String parisFive,
@@ -1781,7 +915,6 @@ class InsightsScreenPage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(
               left: 8.h,
-              // to/p: 5.v,
             ),
             child: Text(
               parisFive,
